@@ -52,11 +52,15 @@ KoGPT2의 사전학습된 모델을 활용하여 Chatbot을 생성하였다. 이
     - Tokenizer
       + BPE tokenizer를 이용하여 학습
 #### 데이터 입력 방법
+  ![데이터입력방법](https://user-images.githubusercontent.com/75753717/123137532-02f5b100-d48f-11eb-899c-05617a5b7eb4.PNG)
   * 토큰화의 방식은 위의 토크나이저 부분에서 설명한 부분과 동일하다.
 #### 학습 및 미세조정
   * 미세조정의 과정
+  ![미세조정과정](https://user-images.githubusercontent.com/75753717/123137533-038e4780-d48f-11eb-9dbc-00aca33a3c96.PNG)
     - 최대한 많은 데이터를 이용하기 위해 1차 미세조정을 통해 최선의 에포크를 탐색한 뒤, 전체의 데이터를 이용하여 2차 미세조정을 하여 최종 모델을 평가한다.
+  ![1epoch](https://user-images.githubusercontent.com/75753717/123137521-012bed80-d48f-11eb-9915-c156831a895a.PNG)
     - 컴퓨터 사양 상의 이유로 32배치를 이용하여 총 10번의 epoch동안 학습을 진행하였고 최선의 epoch은 9번으로 확인하였다.
+  ![9](https://user-images.githubusercontent.com/75753717/123137527-025d1a80-d48f-11eb-8955-78a8cc62e553.PNG)
 ### 평가
 #### 최선의 대답 찾기
   * 디코딩 시에 다양한 파라미터 조정을 통해 최선의 답을 찾기 위해 노력하였다.
@@ -79,4 +83,5 @@ KoGPT2의 사전학습된 모델을 활용하여 Chatbot을 생성하였다. 이
    
     **test data의 평균 BLEU: 0.2715912..**
 ### 결과
+  ![결과](https://user-images.githubusercontent.com/75753717/123137530-02f5b100-d48f-11eb-97bd-3b091cb6400b.PNG)
   * 위로해주는 문맥을 가진 답변들이 생성되었다. 그러나 앞선 질문에 있는 단어를 반복하여 대답한다는 것이 본 챗봇이 더 발전해야 할 부분이라고 생각한다.
