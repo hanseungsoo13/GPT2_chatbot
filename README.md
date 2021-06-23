@@ -41,7 +41,8 @@ KoGPT2의 사전학습된 모델을 활용하여 Chatbot을 생성하였다. 이
   * 대화 데이터 셋을 Train, Validation, Test set으로 나누어 분석 진행
 #### 토크나이저
   * taeminlee의 KoGPT2 토크나이저를 활용
-  * 데이터에 시작토큰과 종결토큰을 추가하여 <s>Q: 질문 A:대답</s>의 형태로 토큰화
+  * 데이터에 시작토큰과 종결토큰을 추가하여 <s> Q: 질문 A:대답 </s>의 형태로 토큰화
+  ![토크나이저](https://user-images.githubusercontent.com/75753717/123137539-04bf7480-d48f-11eb-8463-c553fd42b7e6.PNG)
 
 ### 모형 및 데이터 입력 방식
 #### 사전학습모델(PreTrained Model) - KoGPT2
