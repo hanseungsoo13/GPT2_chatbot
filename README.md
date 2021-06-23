@@ -34,5 +34,19 @@ KoGPT2의 사전학습된 모델을 활용하여 Chatbot을 생성하였다. 이
 
 ### 전처리
 #### 중복 문장 제거
-  
+  ![중복Q](https://user-images.githubusercontent.com/75753717/123137537-0426de00-d48f-11eb-96ab-c2f4a5eda86c.PNG)
   * 중복되어 있는 질문과 답변 존재
+    → 중복된 답변을 가진 질문들 중 비슷한 의미의 질문은 제거
+#### 데이터 분할
+  * 대화 데이터 셋을 Train, Validation, Test set으로 나누어 분석 진행
+#### 토크나이저
+  * taeminlee의 KoGPT2 토크나이저를 활용
+  * 데이터에 시작토큰과 종결토큰을 추가하여 <s>Q: 질문 A:대답</s>의 형태로 토큰화
+
+### 모형 및 데이터 입력 방식
+#### 사전학습모델(PreTrained Model) - KoGPT2
+  * GPT2란? 
+    - https://www.notion.so/Generative-Pre-Training-GPT-6994270592e0446d879484f98732c415
+  * KoGPT2: GPT의 부족한 한국어 성능을 극복하기 위해 개발된 한국어 디코더 언어 모델
+    - Tokenizer
+      + BPE tokenizer를 이용하여 학습
